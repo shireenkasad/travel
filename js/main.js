@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 	function loadPrevious(){
 		$detailHolder.find('.detail-image[data-value="' + $currentValue + '"]').removeClass('active');
-		if($currentValue == 0){
+		if($currentValue === 0){
 			$currentValue = $galleryTotal - 1;
 		}
 		else { $currentValue--; }
@@ -91,7 +91,7 @@ $(document).ready(function(){
 	});
 
 
-     $( ".listing-content" ).on( "click", "h3", function() {
+     $( ".page-content" ).on( "click", "h3", function() {
     	$('ul').toggleClass('open-list');
     	$('h3').toggleClass('selectedListing');
     }); 

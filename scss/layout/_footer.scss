@@ -1,0 +1,16 @@
+footer {
+    background-color: $dark-gray;
+    color: rgba(255,255,255, .5);
+    font-family: $sans-serif;
+    font-size: .8em;
+    text-align: center;
+    letter-spacing: 1px; 
+}
+
+.footer-inner{
+    padding: 64px 32px;
+
+    @media #{$media} and ($media-min: $width-large) {
+        padding: 24px 32px;
+    }
+}

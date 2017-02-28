@@ -1,0 +1,40 @@
+body {
+    font-family: $serif;
+    font-weight: $font-weight-med;
+    background-color: $dark-gray;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255,255,255,.8);
+}
+
+img { 
+    display: block;
+    width: 100%;
+}
+h2{
+    font-family: $sans-serif;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    font-weight: $font-weight-med;
+}
+h3{
+    font-family: $sans-serif;
+    font-size: 1.5em;
+    font-weight: $font-weight-med;
+}
+
+figure {
+    margin: 0;
+}
+
+.fixed {
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+

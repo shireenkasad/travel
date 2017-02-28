@@ -1,0 +1,33 @@
+.section-gallery {
+    padding: 30px 0;
+    text-align: center;
+
+    @media #{$media} and ($media-min: $width-med) {
+        padding: 20px 20px 92px 20px;
+    }
+
+    .listing & {
+        padding: 20px 0 20px 0;
+        @media #{$media} and ($media-min: $width-large) {
+            padding: 20px 0 92px 0;
+        }
+    }
+}
+
+.gallery-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    min-width: 140px;
+    max-width: 260px;
+    display: inline-block;
+    width: 46%;
+    padding: 1px 2px;
+    cursor: pointer;
+
+    @media #{$media} and ($media-min: $width-large) {
+        width: 23%;
+    }
+}

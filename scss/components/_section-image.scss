@@ -1,0 +1,57 @@
+.section-img-area {
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    padding: 98px 0;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(50,69,68,.8);
+        z-index: 99;
+    }
+    .section-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        img{
+            min-width: 700px;
+
+            @media #{$media} and ($media-min: $width-med) {
+                min-width: 900px;
+            }
+        }
+    }
+    .text-over {
+        z-index: 100;
+        position: relative;
+        width: 100%;
+        max-width: 850px;
+        @include box-sizing;
+        margin: 0 auto;
+        padding: 32px 30px;
+        text-align: center;
+        font-family: $sans-serif;
+
+        p {
+            font-weight: 100;
+            font-size: 1.6em;
+            line-height: 1.2em;
+            letter-spacing: 1px;
+            color: #fff;
+
+            @media #{$media} and ($media-min: $width-med) {
+                font-size: 2.5em;
+            }
+            @media #{$media} and ($media-min: $width-large) {
+                font-size: 3.6em;
+            }
+        }
+    }
+}

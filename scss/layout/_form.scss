@@ -1,0 +1,61 @@
+form {
+    max-width: 550px;
+    padding:20px 0 92px;
+
+    .button {
+        color: #fff;
+        background-color: #1f2526;
+        border-color: #1f2526;
+        text-transform: uppercase;
+        padding: 12px 30px;
+        font-family: $sans-serif;
+        font-size: .7em;
+        letter-spacing: 2px;
+    }
+}
+
+.field-list {
+    .title {
+        display: block;
+    }
+    .fields {
+        margin: 0 0 0 -2%;
+
+        .field {
+            width: 48%;
+            float: left;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .title, .description, .field, .fields .field-error {
+            margin-left: 2%;
+        }
+    }
+    .field {
+        position: relative;
+        margin: 0 0 24px;
+
+        .caption {
+            font-size: 12px;
+
+            .field-element {
+                font-size: 14px;
+            }
+        }
+        .field-element {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0 4px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            font-family: $sans-serif;
+            font-size: 12px;
+            line-height: normal;
+            @include box-sizing;
+            border-radius: 2px;
+        }
+    }
+}

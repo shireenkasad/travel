@@ -1,0 +1,21 @@
+#content {
+    background-color: #ffffff;
+    position: relative;
+    top: 54px;
+    @include transform(translatex(0px));
+    @include transition(transform .14s 0s ease-in-out);
+
+    @media #{$media} and ($media-min: $width-large) {
+        @include noMobile;
+    }
+}
+
+#mobile-open.activeMobile ~ div#content {
+    position: fixed;
+    @include transform(translatex(-260px));
+    @media #{$media} and ($media-min: $width-large) {
+        @include noMobile;
+    }
+}
+
+

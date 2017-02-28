@@ -1,0 +1,45 @@
+.section-column {
+    padding: 0px 20px 50px;
+    @include box-sizing;
+
+    .listing & {
+        padding: 0 20px;
+        @media #{$media} and ($media-min: $width-large) {
+            padding: 0 0 50px 0;
+        }
+    }
+}
+
+.col-holder {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .col {
+        width: 100%;
+        padding: 20px 10px;
+        float: left;
+        max-width: none;
+        vertical-align: top;
+        @include box-sizing;
+
+        @media #{$media} and ($media-min: $width-med) {
+            width: 50%;
+            max-width: 500px;
+        }
+    }
+    .col-subhead {
+        font-family: $sans-serif;
+        text-transform: uppercase;
+    }
+    .col-text {
+        text-align: left;
+
+        h2 { 
+            margin: 15px 0 7px 0;
+        }
+
+        p {
+            color: rgba(31,37,38,.75);
+        }
+    }
+}

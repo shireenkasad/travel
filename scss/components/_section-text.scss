@@ -1,0 +1,17 @@
+.section-text {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+
+    @media #{$media} and ($media-min: $width-med) {
+        padding: 96px 32px;
+    }
+    
+	p {
+	    max-width: 600px;
+	    margin: 0 auto;
+	    font-size: 1.1em;
+	    color: rgba(31,37,38,.75);
+	}
+    
+}

@@ -1,0 +1,90 @@
+ .page-content {
+    padding: 20px 0px;  
+    .contact & {
+        padding: 20px 30px;
+    }
+    @include box-sizing;
+    @media #{$media} and ($media-min: $width-large) {
+        @include main-content;
+    }
+ }
+
+.left-sidebar{
+    @include left-sidebar(block, 100%, 0 20px 10px 20px);
+    @media #{$media} and ($media-min: $width-large) {
+        @include left-sidebar(inline-block, 23%, 0 20px 0 0);
+    }
+
+    p {
+        margin: 0;
+        color: rgba(31,37,38,.6);
+    }
+
+    .listing & {
+        h3 {
+            margin: 5px;
+            cursor: pointer;
+
+            &:before {  
+                content: '+';
+                padding-right: .25em;
+                width: .75em;
+                display: inline-block;
+                font-size: .8em;
+                vertical-align: middle;
+
+                @media #{$media} and ($media-min: $width-large) {
+                    content: '';
+                }  
+            } 
+        }
+        .selectedListing:before {
+            content: '-';
+            @media #{$media} and ($media-min: $width-large) {
+                content: '';
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0 0 0 25px;
+            @include transform(scale(1,0));
+            @include transform-origin(0 0);
+            @include transition(transform .14s 0s ease-in-out); 
+            height: 0;
+
+            &.open-list{
+                display: block;
+                transform: scale(1,1);
+                height: auto;
+
+                li {
+                    @include transition(color .1s 0s ease-in-out);
+                }
+            }
+            @media #{$media} and ($media-min: $width-large) {
+                display: block;
+                transform: scale(1,1);
+            }
+        }
+        li {
+            list-style: none;
+            padding: 5px 0px;
+        }
+        a {
+            color: rgba(31,37,38,.6);
+            font-size: 1.1em;
+            &:hover {
+                color: #1f2526;
+            } 
+        }
+    }
+
+}
+.right-mainbar {
+    @include right-mainbar(block, 100%);
+    @media #{$media} and ($media-min: $width-large) {
+        @include right-mainbar(inline-block, 75%, 700px);
+    }
+}
+
+

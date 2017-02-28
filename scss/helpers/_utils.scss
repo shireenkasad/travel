@@ -1,0 +1,144 @@
+$dark-gray: #222e2e; 
+
+$sans-serif: 'Roboto', sans-serif;
+$serif: 'Cormorant Garamond', serif;
+$font-weight-med: 300;
+
+$media: screen;
+$media-min: min-width; 
+$width-med: 35em;
+$width-large: 46em;
+
+$mpadding: 10px 20px 10px 40px;
+$dpadding: 0 20px;
+
+
+@mixin transition($transition...){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin transform($transform...) {
+    -moz-transform:    $transform;
+    -o-transform:      $transform;
+    -webkit-transform: $transform;
+    transform:         $transform;
+}
+
+@mixin transform-origin($property...) {
+    -moz-transform-origin:    $property;
+    -o-transform-origin:      $property;
+    -webkit-transform-origin: $property;
+    transform-origin:         $property;
+}
+
+@mixin box-sizing() {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin noMobile(){
+    position: relative;
+    top: 82px;
+    @include transform(translatex(0px));
+}
+
+
+
+/* HEADER */
+
+@mixin bars($top:0){
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    @include transition(.1s 0s ease-in-out);
+    @include transform-origin(50% 50%);
+    position: absolute;
+    top: $top;
+    right: 0;
+}
+
+@mixin nav($display, $padding...){
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            display: $display;
+            padding: $padding;
+
+            &.nav.drop > a {
+                &:before {
+                    content: '+';
+                    padding-right: .25em;
+                    width: .75em;
+                    display: inline-block;
+                    font-size: 1.4em;
+                }
+                &.selected:before {
+                    content: '-';
+                }
+                @media #{$media} and ($media-min: $width-large) {
+                    &:before {
+                        content: '';
+                    }
+                    &.selected:before {
+                        content:'';
+                    }
+                }
+            }
+        }
+        a {
+            font-size: .7em;
+            color: rgba(255,255,255,.8);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            &:hover {
+                color: rgba(255,255,255,1);
+            }
+        }
+    }
+}
+
+/* GALLERY */
+@mixin detail-nav($right, $left) {
+    right: $right;
+    left: $left;
+    top: 50%;
+    padding: 10px 20px;
+    position: absolute;
+    margin-top: -22px;
+    z-index: 400;
+    cursor: pointer;
+}
+
+
+/* SECONDARY */
+
+@mixin main-content(){
+    padding: 92px 20px 0;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@mixin left-sidebar($display, $width, $padding...){
+        display: $display;
+        width: $width;
+        vertical-align: top;
+        padding: $padding;
+        @include box-sizing;
+}
+
+@mixin right-mainbar($display, $width, $max-width: 100%){
+    display: $display;
+    width: $width;
+    @include box-sizing;
+    max-width: $max-width;
+}
